@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  background-color:rgba(150, 50, 250,.5);
+  padding :5px 5px ;
+  margin :0 auto ;
+}
+
+h1 {
+  color:white ;
+  padding : 0px ;
+  margin :0 auto ;
+
+}
+
+.pro {
+  padding :5px 5px ;
+  margin :5px auto ;
+  color :black;
+  background-color :white;
+  box-shadow:2px 2px gray;
+}
