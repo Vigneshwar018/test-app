@@ -1,10 +1,31 @@
 const express = require('express');
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
+
+const router = require ('./router/routers')
 
 const app = express();
 
-app.get('/api', (req, res)=> {
-  res.send('hi')
-})
+app.use(bodyParser.json())
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+
+  next();
+
+});
+
+
+app.use('/api', router);
+
+mongoose.connect('mongodb://localhost:27017/test', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.listen(5000, () => console.log('server is running in 5000'))

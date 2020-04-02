@@ -12,7 +12,7 @@ import Timer from './comp/timer'
 
 const App = () => {
 
-  const API = 'https://opentdb.com/api.php?amount=10&category=18'
+  const API = 'http://localhost:5000/api'
 
   const [data,
     setData] = useState(db)
@@ -35,7 +35,7 @@ const App = () => {
   const [resetState,
     setResetState] = useState (false)
 
-  const sec = 10
+  const sec = 100
   const [time,
     setTime] = useState (sec)
 
