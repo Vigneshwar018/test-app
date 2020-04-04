@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 
-const router = require ('./router/routers')
+const quiz_router = require ('./router/quiz_routers')
+const users_router = require ('./router/users_routers')
+
 
 const app = express();
 
@@ -21,7 +23,8 @@ app.use((req, res, next) => {
 });
 
 
-app.use('/api', router);
+app.use('/api', quiz_router);
+app.use ('/api', users_router)
 
 mongoose.connect('mongodb://localhost:27017/test', {
   useNewUrlParser: true,

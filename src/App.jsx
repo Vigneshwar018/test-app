@@ -12,7 +12,7 @@ import Timer from './comp/timer'
 
 const App = () => {
 
-  const API = 'http://localhost:5000/api'
+  const API = 'http://localhost:5000/api/quiz'
 
   const [data,
     setData] = useState(db)
