@@ -3,7 +3,8 @@ const express = require('express');
 const {
   getUser,
   newUser,
-  getOneUser
+  getOneUser,
+  manyUser
 } = require('./controller/user_controller')
 
 
@@ -15,7 +16,7 @@ router.get('/user/:id', getOneUser)
 
 router.post('/user', newUser)
 
-//router.post('/all', createMany)
+//router.post('/user/all', manyUser)
 
 
 module.exports = router;

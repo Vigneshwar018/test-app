@@ -4,6 +4,7 @@ import React, {
 }from 'react'
 import Quiz from './comp/Quiz'
 import Buttons from './comp/buttons'
+import Loading from './comp/utility/loder'
 import db from './data/quiz'
 import cls from './App.module.css';
 import Timer from './comp/timer'
@@ -12,7 +13,9 @@ import Timer from './comp/timer'
 
 const App = () => {
 
-  const API = 'http://localhost:5000/api/quiz'
+
+  //const API = 'http://localhost:5000/api/quiz'
+  const API = 'https://opentdb.com/api.php?amount=10'
 
   const [data,
     setData] = useState(db)
@@ -97,7 +100,7 @@ const App = () => {
   }
 
   if (loading) {
-    return <h2 className={cls.h1}>Loading... </h2>
+    return <Loading />
   }
 
   if (total === data.results.length) {

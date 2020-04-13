@@ -1,5 +1,6 @@
 const Users = require('../../schema/user_schema')
 
+const data = require('../../../src/data/user')
 
 const getUser = async (req, res, next) => {
   try {
@@ -45,6 +46,15 @@ const newUser = async (req, res, next) => {
   } catch (e) {}
 }
 
+
+const manyUser = async (req, res, next) => {
+  try {
+    const many = await Users.insertMany(data)
+    res.json(many)
+  } catch (e) {}
+}
+
 exports.getUser = getUser;
 exports.getOneUser = getOneUser;
 exports.newUser = newUser;
+exports.manyUser = manyUser;

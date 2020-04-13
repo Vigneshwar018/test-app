@@ -20,7 +20,7 @@ router.get('/quiz/:id', getOneQuiz)
 
 router.post('/quiz', newQuiz)
 
-//router.post('/all', createMany)
+//router.post('/quiz/all', createMany)
 
 
 module.exports = router;
