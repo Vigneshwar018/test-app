@@ -1,0 +1,24 @@
+{
+  "name": "test-api",
+  "version": "1.0.0",
+  "description": "test-api for react",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back": "nodemon server.js",
+    "front": "cd ../ && npm start",
+    "dev": "concurrently \" npm run back\" \"npm run front \""
+  },
+  "author": "vigneshwar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "mongoose-simple-random": "^0.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
