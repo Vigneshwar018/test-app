@@ -38,7 +38,7 @@ const App = () => {
   const [resetState,
     setResetState] = useState (false)
 
-  const sec = 100
+  const sec = 90
   const [time,
     setTime] = useState (sec)
 
