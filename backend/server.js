@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.use('/api', quiz_router);
 app.use ('/api', users_router)
 
-mongoose.connect('mongodb://localhost:27017/test', {
+mongoose.connect('mongodb+srv://user1:user0987@cluster0-2fm1d.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
