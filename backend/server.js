@@ -1,6 +1,11 @@
+require('dotenv').config()
+
 const express = require('express');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
+
+DataBase = process.env.AUTH_KEY
+Port = process.env.PORT
 
 const quiz_router = require ('./router/quiz_routers')
 const users_router = require ('./router/users_routers')
@@ -26,9 +31,9 @@ app.use((req, res, next) => {
 app.use('/api', quiz_router);
 app.use ('/api', users_router)
 
-mongoose.connect('mongodb+srv://user1:user0987@cluster0-2fm1d.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(DataBase, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-app.listen(5000, () => console.log('server is running in 5000'))
+app.listen(Port, () => console.log('server is running in ' + Port))

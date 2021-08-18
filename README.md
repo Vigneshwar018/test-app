@@ -1,12 +1,7 @@
 busybox tcpsvd -vE localhost 1024 busybox ftpd -w /data/data/com.termux/files/home/test-app
 
 
-
-
-
-
-
-
+#test-app
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

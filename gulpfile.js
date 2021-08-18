@@ -2,6 +2,11 @@ let gulp = require('gulp'),
 ftp = require('vinyl-ftp'),
 gutil = require ('gulp-util');
 
+var globs = ['src/**',
+    'backend/**',
+    'public/**', 'backend/.env', '*', '.gitignore']; 
+
+
 function ftpDeploy() {
 
   var conn = ftp.create( {
@@ -10,10 +15,8 @@ function ftpDeploy() {
     parallel: 10,
     log: gutil.log
   });
-
-  var globs = ['src/**',
-    'backend/**',
-    'public/**'];
+//test 
+ // var globs = ['src/**', 'backend/**','public/**', 'backend/.env'];
   let path = '/data/data/com.termux/files/home/test-app';
 
   // using base = '.' will transfer everything to /public_html correctly
@@ -29,7 +32,8 @@ function ftpDeploy() {
 // watch
 function Watch(done) {
   'use strict';
-  gulp.watch(['src/**', 'backend/**', 'public/**'], ftpDeploy);
+  gulp.watch(globs, ftpDeploy); 
+  //gulp.watch(['src/**', 'backend/**', 'public/**', 'backend/.env'], ftpDeploy);
   //gulp.watch('src/**').on('change', ftpDeploy);
 
 };
